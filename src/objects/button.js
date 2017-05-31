@@ -23,8 +23,9 @@
           "sayHi":function(name){
             return `Hi, ${name}`
           },
-          "init":function(){
-            button.ui.skeleton = `<button>${button.data.title}</button>`
+          "init":function(obj){
+            console.log(this)
+            obj.ui.skeleton = `<button>${obj.data.static.title}</button>`
           }
         }
         ,"events":{
