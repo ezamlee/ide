@@ -3,8 +3,8 @@
         "id"    : "1",
         "class" : "button",
         "desc"  : "This is simple button"
-      },
-      "ui":{
+      }
+      ,"ui":{
         "skeleton" : ``,
         "css"      :{
           "button":{
@@ -12,13 +12,13 @@
             "color"  :"blue"
           }
         }
-      },
-      get data (){
-        return   {
+      }
+      ,"data" :{
+        "static":{
           "title":"select button"
         }
-      },
-      "provider":{
+      }
+      ,"provider":{
         "functions":{
           "sayHi":function(name){
             return `Hi, ${name}`
@@ -26,8 +26,8 @@
           "init":function(){
             button.ui.skeleton = `<button>${button.data.title}</button>`
           }
-        },
-        "events":{
+        }
+        ,"events":{
           "click":["sayHi","ahmed"]
         }
       }
