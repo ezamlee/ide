@@ -1,17 +1,63 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>jQuery UI Droppable - Default functionality</title>
-    <link   rel="stylesheet" href="./src/styles/jqueryui.css">
-    <link   rel="stylesheet" href="./src/styles/bootstap.css">
-    <script src="./src/scripts/jquery.js"></script>
-    <script src="./src/scripts/jqueryui.js"></script>
-    <script src="./src/scripts/bootstap.js"></script>
-  </head>
-  <body>
-    <div id="side-bar"></div>
-    <div id="canvas"></div>
-  </body>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Bootstrap Template</title>
+    <link href="src/styles/bootstrap.min.css" rel="stylesheet">
+    <link href="src/styles/simple-sidebar.css" rel="stylesheet">
+<body>
+</head>
+    <div id="wrapper">
+        <div id="sidebar-wrapper"> <!-- Sidebar -->
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand"><a href="#">Start Bootstrap</a></li>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#"></a></li>
+            </ul>
+        </div><!-- /#sidebar-wrapper -->
+        <div id="page-content-wrapper"><!-- Page Content -->
+            <div class="container-fluid">
+                <div class="row">
+                    <div id="canvas" class="col-lg-12">
+                        <a href="#menu-toggle" class="btn btn-default hidden-lg hidden-md hidden-sm" id="menu-toggle">Toggle Menu</a>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /#page-content-wrapper -->
+    </div><!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="src/scripts/jquery.js"></script>
+    <script src="src/scripts/jqueryui.js"></script>
+    <script src="src/scripts/bootstrap.min.js"></script>
+    <script src="src/objects/button.js"></script>
+    <script src="src/scripts/parser.js"></script>
+    <script>
+    $(document).ready(function(){
+      if($(window).width() > 744){
+        $("#wrapper").addClass("toggled");
+      }
+      else if($(window).width() <= 744 ){
+        $("#wrapper").removeClass("toggled");
+      }
+      $(window).resize(function(){
+        if($(window).width() > 744){
+          $("#wrapper").addClass("toggled");
+        }
+        else if($(window).width() <= 744 ){
+          $("#wrapper").removeClass("toggled");
+        }
+      })
+    })
+
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+</body>
 </html>

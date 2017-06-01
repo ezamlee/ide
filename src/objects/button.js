@@ -18,7 +18,7 @@
       }
       ,"data" :{
         "static":{
-          "title":"select button"
+          "title":"Select Button"
         },
         "provided":{
           "username":{
