@@ -1,22 +1,23 @@
-// $(".draggable").draggable({
-//   cancel: false,
-// 	appendTo: '#droppable',
-//   containment: "window",
-// 	cursor: 'move',
-// 	revertDuration: 100,
-// 	revert: 'invalid',
-// 	helper: 'clone'
-// });
-//
-// $("#droppable").droppable({
-//     accept: ".btn",
-// 	  drop: function (event, ui) {
-// 		    ui.helper.clone().appendTo('#droppable');
-//     }
-// });
 
+$(".draggable").draggable({
+  cancel:false,
+  appendTo: '#droppable',
+  containment: "window",
+  cursor: 'move',
+  revertDuration: 100,
+  revert: 'invalid',
+  helper: 'clone'
+});
 
-  var parser = function(obj){
-    $("#droppable").append(obj.ui.skeleton(obj))
+$("#droppable").droppable({
+  accept: ".draggable",
+  drop: function (event, ui)
+  {
+    ui.helper.clone().appendTo('#droppable');
   }
-  parser(button);
+});
+
+var parser = function(obj){
+  $("#droppable").append(obj.ui.skeleton(obj))
+}
+parser(button);

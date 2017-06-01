@@ -27,7 +27,7 @@
                         <a href="#menu-toggle" class="btn btn-default hidden-lg hidden-md hidden-sm" id="menu-toggle">Toggle Menu</a>
 
                           <p>Drop Me</p>
-                        
+
                     </div>
                 </div>
             </div>
@@ -65,25 +65,5 @@
     });
     </script>
 
-    <script type="text/javascript">
-    $(function() {
-        $(".draggable").draggable({
-          cancel:false,
-          appendTo: '#droppable',
-          containment: "window",
-          cursor: 'move',
-          revertDuration: 100,
-          revert: 'invalid',
-          helper: 'clone'
-        });
-
-        $("#droppable").droppable({
-          accept: ".draggable",
-          drop: function (event, ui) {
-            ui.helper.clone().appendTo('#droppable');
-          }
-        });
-      });
-    </script>
 </body>
 </html>
