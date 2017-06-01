@@ -1,21 +1,30 @@
   button = {
       "desc":{
         "id"    : "1",
-        "class" : "button",
-        "desc"  : "This is simple button"
+        "type" : "button",
+        "desc"  : "This is simple button",
+        "lic"   : "Apache 2"
       }
       ,"ui":{
-        "skeleton" : ``,
-        "css"      :{
-          "button":{
-            "class"  :["btn","btn-default"],
-            "color"  :"blue"
-          }
-        }
+              "skeleton" : function(obj){
+                return  `<button>${obj.data.static.title}</button>`;
+              },
+              "css":{
+                "button":{
+                  "class"  :["btn","btn-default"],
+                  "color"  :["blue"]
+                }
+              }
       }
       ,"data" :{
         "static":{
           "title":"select button"
+        },
+        "provided":{
+          "username":{
+            "func" : "getUserName",
+            "parameters" : ["Heba Bahaa"]
+          }
         }
       }
       ,"provider":{
@@ -23,13 +32,12 @@
           "sayHi":function(name){
             return `Hi, ${name}`
           },
-          "init":function(obj){
-            console.log(this)
-            obj.ui.skeleton = `<button>${obj.data.static.title}</button>`
+          "getUserName":function(username){
+            return username;
           }
         }
         ,"events":{
-          "click":["sayHi","ahmed"]
+          "click":[{"sayHi":["ahmed"]}]
         }
       }
   }
