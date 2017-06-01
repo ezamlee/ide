@@ -11,7 +11,7 @@
               },
               "css":{
                 "button":{
-                  "class"  :["btn","btn-default"],
+                  "class"  :["btn","btn-success"],
                   "color"  :["blue"]
                 }
               }

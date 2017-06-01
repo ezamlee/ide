@@ -13,11 +13,17 @@ $("#droppable").droppable({
   accept: ".draggable",
   drop: function (event, ui)
   {
-    ui.helper.clone().appendTo('#droppable');
+    parser(button);
+    ui.helper.clone().addClass("draggable").appendTo('#droppable');
   }
 });
 
 var parser = function(obj){
   $("#droppable").append(obj.ui.skeleton(obj))
+  //$("#droppable button").addClass([obj.ui.css.button.class[0], obj.ui.css.button.class[1]])
 }
-parser(button);
+var elements = function(obj){
+  $(".sidebar-nav").append(obj.ui.skeleton(obj));
+  $(".sidebar-nav button").addClass('draggable');
+}
+elements(button);
