@@ -1,10 +1,22 @@
-$(document).ready(function(){
+// $(".draggable").draggable({
+//   cancel: false,
+// 	appendTo: '#droppable',
+//   containment: "window",
+// 	cursor: 'move',
+// 	revertDuration: 100,
+// 	revert: 'invalid',
+// 	helper: 'clone'
+// });
+//
+// $("#droppable").droppable({
+//     accept: ".btn",
+// 	  drop: function (event, ui) {
+// 		    ui.helper.clone().appendTo('#droppable');
+//     }
+// });
+
+
   var parser = function(obj){
-    $("#canvas").append(obj.ui.skeleton(obj))
+    $("#droppable").append(obj.ui.skeleton(obj))
   }
   parser(button);
-
-  function() {
-    $( "#draggable" ).draggable();
-  }
-})

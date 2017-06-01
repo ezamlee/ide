@@ -1,17 +1,50 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>jQuery UI Droppable - Default functionality</title>
-    <link   rel="stylesheet" href="./src/styles/jqueryui.css">
-    <link   rel="stylesheet" href="./src/styles/bootstrap.css">
-    <script src="./src/scripts/jquery.js"></script>
-    <script src="./src/scripts/jqueryui.js"></script>
-    <script src="./src/scripts/bootstap.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+    <style media="screen">
+      #droppable { height: 140px; border: black 1px solid;}
+    </style>
   </head>
   <body>
-    <div id="side-bar" class="col-md-2 col-sm-3 hidden-xs" style="background:#333; height:300px"></div>
-    <div id="canvas" class="col-md-10 col-sm-9 col-xs-12"></div>
+    <div id="droppable">
+    	<p>droppable</p>
+    </div>
+    <br style="clear:both">
+    <div id="storage">
+    	<div class="draggable">
+    		<button type="button" name="button">btn</button>
+    	</div>
+    	<div class="draggable">
+    		<p>draggable-2</p>
+    	</div>
+    	<div class="draggable">
+    		<p>draggable-3</p>
+    	</div>
+    </div>
+    <script type="text/javascript">
+    $(function() {
+      $(".draggable").draggable({
+        cancel:false,
+        appendTo: '#droppable',
+        containment: "window",
+        cursor: 'move',
+        revertDuration: 100,
+        revert: 'invalid',
+        helper: 'clone'
+      });
+
+      $("#droppable").droppable({
+        accept: ".draggable",
+        drop: function (event, ui) {
+          ui.helper.clone().appendTo('#droppable');
+        }
+      });
+
+
+      });
+    </script>
   </body>
 </html>
