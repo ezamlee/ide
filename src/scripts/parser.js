@@ -1,6 +1,4 @@
 
-
-
 $("#droppable").droppable({
   accept: ".draggable",
   drop: function (event, ui)
