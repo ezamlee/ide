@@ -1,13 +1,5 @@
 
-$(".draggable").draggable({
-  cancel:false,
-  appendTo: '#droppable',
-  containment: "window",
-  cursor: 'move',
-  revertDuration: 100,
-  revert: 'invalid',
-  helper: 'clone'
-});
+
 
 $("#droppable").droppable({
   accept: ".draggable",
@@ -27,3 +19,12 @@ var elements = function(obj){
   $(".sidebar-nav button").addClass('draggable');
 }
 elements(button);
+$(".draggable").draggable({
+  cancel:false,
+  appendTo: '#droppable',
+  containment: "window",
+  cursor: 'move',
+  revertDuration: 100,
+  revert: 'invalid',
+  helper: 'clone'
+});
