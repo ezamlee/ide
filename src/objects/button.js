@@ -24,7 +24,8 @@
             return `Hi, ${name}`
           },
           "init":function(){
-            button.ui.skeleton = `<button>${button.data.title}</button>`
+		console.log(this.sayHi);
+            
           }
         }
         ,"events":{
