@@ -1,3 +1,13 @@
+var parser = function(obj){
+  // $("#droppable").append(obj.ui.skeleton(obj))
+  console.log(obj.ui.css.button.class[0]);
+  $("#droppable button.draggable").addClass(obj.ui.css.button.class[0])
+}
+var elements = function(obj){
+  $(".sidebar-nav").append(obj.ui.skeleton(obj));
+  $(".sidebar-nav button").addClass('draggable');
+}
+elements(button);
 
 $("#droppable").droppable({
   accept: ".draggable",
@@ -7,18 +17,6 @@ $("#droppable").droppable({
     ui.helper.clone().addClass("draggable").appendTo('#droppable');
   }
 });
-
-
-var parser = function(obj){
-  $("#droppable").append(obj.ui.skeleton(obj))
-  $("#draggable").append(obj.ui.skeleton(obj))
-  //$("#droppable button").addClass([obj.ui.css.button.class[0], obj.ui.css.button.class[1]])
-}
-var elements = function(obj){
-  $(".sidebar-nav").append(obj.ui.skeleton(obj));
-  $(".sidebar-nav button").addClass('draggable');
-}
-elements(button);
 
 $(".draggable").draggable({
   cancel:false,
